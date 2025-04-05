@@ -189,4 +189,4 @@ const vocalOptions = {
     }
 }
 
-export default vocalOptions;
+export default vocalOptions

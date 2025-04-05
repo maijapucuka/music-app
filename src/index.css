@@ -10,7 +10,6 @@ body {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   background-color: rgb(255, 235, 205);
-  /* padding: 2em; */
 }
 
 code {
@@ -38,19 +37,30 @@ nav {
 }
 
 .app-title {
-  text-transform: uppercase;
   letter-spacing: 2px;
 }
 
+.header-element:focus, .header-element:hover {
+  border-bottom: 2px solid black;
+}
+
+/* CONTAINER ELEMENT */
+
 .container {
-  padding: 2em;
+  padding: 2em 2em 6em 2em;
   display: flex;
   flex-direction: column;
   gap: 2em;
 }
 
+h2 {
+  text-decoration: underline;
+  text-underline-offset: .5em;
+}
+
+/* SONG SELECTION FORM ELEMENTS */
+
 .selector-container {
-  /* background-color: aqua; */
   padding: 1em;
   display: flex;
   align-items: center;
@@ -58,19 +68,7 @@ nav {
   gap: 2em
 }
 
-/* select, option {
-  background-color: transparent;
-  padding: .5em;
-} */
-
-/* .selector {
-  background-color: aqua;
-  padding: .5em;
-  border-radius: 0;
-} */
-
 select {
-  /* width: 200px; */
   padding: .5em;
   font-size: 16px;
   border: 2px solid #333;
@@ -78,13 +76,16 @@ select {
   background-color: transparent;
   color: #333;
   cursor: pointer;
+  background-color: rgb(252, 211, 150);
+  text-transform: uppercase;
 }
 
 select option {
-  /* background-color: firebrick; */
   color: black;
   padding: 1em;
   cursor: pointer;
+  background-color: rgb(252, 211, 150);
+  text-transform: uppercase;
 }
 
 select:hover, select:focus {
@@ -97,6 +98,8 @@ select:disabled {
   background-color: #e0e0e0;
   cursor: not-allowed;
 }
+
+/* SONG TRACK DISPLAYING ELEMENTS */
 
 .track-container {
   display: flex;
@@ -113,7 +116,7 @@ select:disabled {
   border: 1px solid black;
   padding: .5em;
   border-radius: 8px;
-  /* background-color: rebeccapurple; */
+  transition: all linear .2s;
 }
 
 .btn-container {
@@ -125,7 +128,6 @@ select:disabled {
 
 .track-item:focus, .track-item:hover {
   background-color: rgb(179, 153, 116);
-  /* background-color: blue; */
 }
 
 /* BUTTONS AND LINKS */
@@ -137,27 +139,40 @@ select:disabled {
   border-radius: 4px;
   letter-spacing: 1px;
   font-size: 700;
+  transition: all linear .2s;
+}
+
+.header-element {
+  text-decoration: none;
+  color: black;
+  border-bottom: 2px solid transparent;
+  border-radius: 0;
+  font-weight: 600;
 }
 
 .btn-introduction {
-  padding: 1em 1.2em;
+  padding: .9em 1.3em;
   border-radius: 50%;
-  /* width: 2em;
-  height: 2em; */
-  background-color: #007bff;
+  background-color: rgb(173, 216, 230);
   font-size: 1.2rem;
   margin-right: 1em;
+}
+
+.btn-introduction:focus, .btn-introduction:hover {
+  background-color: rgb(72, 189, 228);
 }
 
 .btn:focus, .btn:hover {
   cursor: pointer;
 }
 
-.btn-save {
+.btn-save, .btn-save-entry, .btn-edit {
   background-color: rgb(187, 103, 187);
 }
 
-.btn-save:focus:not(:disabled), .btn-save:hover:not(:disabled) {
+.btn-save:focus:not(:disabled), .btn-save:hover:not(:disabled),
+.btn-save-entry:focus, .btn-save-entry:hover,
+.btn-edit:focus, .btn-edit:hover {
   background-color: rgb(156, 50, 156);
 }
 
@@ -169,11 +184,12 @@ select:disabled {
   background-color: rgb(90, 195, 230);
 }
 
-.btn-delete {
+.btn-delete, .btn-delete-entry {
   background-color: rgb(252, 50, 50);
 }
 
-.btn-delete:focus, .btn-delete:hover {
+.btn-delete:focus, .btn-delete:hover,
+.btn-delete-entry:focus, .btn-delete-entry:hover {
   background-color: rgb(255, 0, 0);
 }
 
@@ -181,10 +197,10 @@ select:disabled {
   align-self: flex-end;
   background-color: transparent;
   color: red;
-  font-size: 1.3rem;
+  font-size: 1.8rem;
   font-weight: 700;
   border: 1px solid transparent;
-  padding: .2em .3em;
+  padding: .2em .3em .1em .3em;
 }
 
 .btn-close:focus, .btn-close:hover {
@@ -192,22 +208,13 @@ select:disabled {
   cursor: pointer;
 }
 
-.header-element {
-  /* background-color: #94e6bf; */
-  text-decoration: none;
-  color: black;
-  border-bottom: 2px solid transparent;
-  border-radius: 0;
-}
-
-.header-element:focus, .header-element:hover {
-  border-bottom: 2px solid black;
-}
+/* DIARY ENTRY ELEMENTS */
 
 .entries-container {
   display: flex;
   flex-direction: column;
   align-items: center;
+  gap: 1em
 }
 
 .entry-preview {
@@ -216,10 +223,8 @@ select:disabled {
   border: 1px solid black;
   width: fit-content;
   border-radius: 8px;
-  /* display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center; */
+  transition: all .2s linear;
+  width: 30%;
 }
 
 .entry-preview:focus, .entry-preview:hover {
@@ -227,7 +232,9 @@ select:disabled {
   background-color: rgb(209, 149, 39);
 }
 
-.entry-modal, .entry-form, .edit-modal, .introductory-text {
+/* ALL FIXED WINDOWS ELEMENTS */
+
+.entry-modal, .entry-form, .edit-modal, .introduction-container {
   position: fixed;
   top: 50%;
   left: 50%;
@@ -236,7 +243,7 @@ select:disabled {
   transform: translate(-50%, -50%);
   background: black;
   color: white;
-  padding: 3em;
+  padding: 2em;
   box-shadow: 0 0 10px rgba(0,0,0,0.2);
   z-index: 100;
   width: 60%;
@@ -247,45 +254,117 @@ select:disabled {
   gap: 1em;
   border-radius: 8px;
   letter-spacing: 1px;
-  font-size: 1.3rem;
+  overflow-y: auto;
 }
 
-.edit-modal > input, .edit-modal > textarea, .edit-modal > .btn-edit {
+.entry-title, .entry-text, .btn-save-entry, .btn-edit, .btn-delete-entry {
   width: 60%;
   font-size: 1rem;
   padding: .5em;
   letter-spacing: 1px;
 }
 
-.entry-title, .entry-text {
-  width: 80%;
-  font-size: 1rem;
+.introduction-container {
+  z-index: 1000;
+  font-size: 1.3rem;
+  padding: 3em;
 }
 
-.introductory-text {
-  z-index: 1000;
-  font-size: 1.5rem;
+.introduction-text {
+  width: 70%;
+  display: flex;
+  flex-direction: column;
+  gap: 1em;
 }
 
 textarea {
   height: 350px;
 }
 
+/* BACK TO TOP ELEMENT */
+
+.back-to-top {
+  position: fixed;
+  bottom: 2em;
+  right: 4em;
+  color: #010101;
+  font-size: 2rem;
+  padding: .5em .8em;
+  background-color: rgb(173, 216, 230);
+  border-radius: 50%;
+  transition: all .2s linear;
+  cursor: pointer;
+  opacity: 0;
+}
+
+.back-to-top:hover {
+  background-color: rgb(72, 189, 228);
+  /* color: #010101; */
+}
+
+.visible {
+  opacity: 1;
+  visibility: visible;
+  transform: translateY(0);
+}
+
+
 /* MEDIA QUERIES */
 
-@media (max-width: 700px) {
-  body {
-    background-color: #007bff;
+@media (max-width: 1500px) {
+  
+  .entry-title, .entry-text, .btn-save-entry, .btn-edit, .btn-delete-entry {
+    width: 80%;
   }
 
+  h2 {
+    font-size: 1.4rem;
+  }
+
+  .entry-preview {
+    width: 50%;
+  }
+
+  .introduction-container{
+    font-size: 1.2rem;
+    padding: 3em;
+  }
+
+  .introduction-text {
+    gap: .5em;
+    width: 90%;
+  }
+
+  .back-to-top {
+    right: 3em;
+    font-size: 1.5rem;
+  }
+}
+
+@media (max-width: 800px) {
+  
   .track-item {
     flex-direction: column;
   }
 
-  .entry-modal, .entry-form, .edit-modal, .introductory-text {
+  .entry-preview {
+    width: 80%;
+  }
+
+  .introduction-container {
+    font-size: 1.1rem;
+  }
+
+  .introduction-text {
+    width: 100%;
+  }
+
+  .entry-modal, .entry-form, .edit-modal, .introduction-container {
     width: 90%;
-    overflow-y: auto;
+  }
+
+  .back-to-top {
+    right: 1em;
   }
 }
-
 
