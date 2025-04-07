@@ -70,6 +70,7 @@ function App() {
           <p>
             You can create your playlist with selected songs and also write down your impressions and your child's reaction.
           </p>
+          <p>This is just a prototype. Feel free to add more songs.</p>
         </div>
       </div>}
       {/* Back to top btn */}

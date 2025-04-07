@@ -74,11 +74,11 @@ const vocalOptions = {
                 "url": "https://open.spotify.com/embed/track/2Hg0s4lO6t0FMmTxfhTev8?si=5a632846cbaa49cc"
             },
             {
-                "name": "Jonas Kaufmann - I’m singing in the Rain",
+                "name": "Jonas Kaufmann - I'm singing in the Rain",
                 "url": "https://open.spotify.com/embed/track/49kMvOkexKoBOToSEAfygc?si=189dd64e71be4f26"
             },
             {
-                "name": "Marcelito Pomoy- The prayer",
+                "name": "Marcelito Pomoy - The prayer",
                 "url": "https://open.spotify.com/embed/track/440wbijzfAIlG2HxlK2b4o?si=ed41b0f8dc3e4a68"
             }
         ]
@@ -86,7 +86,7 @@ const vocalOptions = {
     female: {
         mezzo_soprano: [
             {
-                "name": "Carmen - Bize, Elina Garanca",
+                "name": "Georges Bizet, Elina Garanca, Orchestra Sinfonica Nazionale Della RAI, Karel Mark Chichon, Coro Filarmonico del Regio di Torino - Carmen, WD 31 / Act I: L'amour est un oiseau rebelle",
                 "url": "https://open.spotify.com/embed/track/2Z6cboXjX5doFEjwvMzML2?si=5b3efef98ae44a47"
             },
             {
@@ -98,11 +98,11 @@ const vocalOptions = {
                 "url": "https://open.spotify.com/embed/track/3zRcSzdQsqsMyT2Qf7csZt?si=94b8c52d206d4245"
             },
             {
-                "name": "Rene Jacobs – Aria Orpheo, W.Gluck",
+                "name": "Rene Jacobs - Aria Orpheo, W.Gluck",
                 "url": "https://open.spotify.com/embed/track/2Yi7qbnLkyfgLNjscJt5dU?si=3a0dd19401334d4a"
             },
             {
-                "name": "Joyce DiDonato – Somewhere over the rainbow",
+                "name": "Joyce DiDonato - Somewhere over the rainbow",
                 "url": "https://open.spotify.com/embed/track/5rCVt6TmLOQhsJlHPk5Tav?si=c22319300f274aa9"
             }
         ],
@@ -140,7 +140,7 @@ const vocalOptions = {
     different_ansambles: {
         female_duets: [
             {
-                "name": "Jacques Offenbach, Anna Netrebko, Elina Garanca, PKF - Prague Philharmonia, Emmanuel Villaume, Prague Philharmonic Choir, Lukas Vasilek - Les Contes d'Hoffmann: Barcarolle - Excerpt",
+                "name": "Jacques Offenbach, Anna Netrebko, Elina Garanca, PKF - Prague Philharmonia, Emmanuel Villaume, Prague Philharmonic Choir, Lukas Vasilek - Les Contes d'Hoffmann: Barcarolle",
                 "url": "https://open.spotify.com/embed/track/4cJxpmyUJ2RXH03FRdI3sk?si=51f36a80243b4960"
             }
         ],
